@@ -17,6 +17,7 @@
     }
     header {
         display:flex;
+        width: 100%;
     }
     main {
         padding-top:60px;
