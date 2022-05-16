@@ -53,7 +53,7 @@ aside {
     overflow-x: hidden;
 }
 
-aside .show {
+.show {
     width: 30vw;
 }
 

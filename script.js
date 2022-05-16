@@ -10,7 +10,6 @@ pizzaJson.map((item, index)=>{
     let pizzaItem = c('.models .pizza-item').cloneNode(true);
     // Preencher as informações em pizzaitem
 
-
     pizzaItem.setAttribute('data-key', index);
     pizzaItem.querySelector('.pizza-item--img img').src = item.img; // IMAGENS PIZZAS
     pizzaItem.querySelector('.pizza-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`; // PREÇOS
@@ -98,6 +97,17 @@ c('.pizzaInfo--addButton').addEventListener('click', ()=> {
             qt:modalQt
         });
     }
-
+    updateCart();
     closeModal();
 });
+
+function updateCart() {
+    if(cart.length > 0) {
+        c('aside').classList.add('show');
+        for(let i in cart){
+            let pizzaItem = pizzaJson.find((item)=>item.id == cart[i].id);
+        }
+    } else {
+        c('aside').classList.remove('show');
+    }
+}
